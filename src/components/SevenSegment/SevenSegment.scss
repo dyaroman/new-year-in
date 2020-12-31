@@ -1,0 +1,141 @@
+.SevenSegment {
+  position: relative;
+
+  display: block;
+  width: calc(var(--line) * 10);
+  height: calc(var(--line) * 10 * 2 - var(--line));
+}
+
+.SevenSegment div {
+  position: absolute;
+
+  display: block;
+
+  opacity: 0;
+  transition: 0.5s;
+  background-color: var(--fill-color);
+
+  &::after,
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    display: block;
+    width: 0;
+    height: 0;
+
+    border-style: solid;
+  }
+
+  //horizontal
+  &:nth-child(1),
+  &:nth-child(4),
+  &:nth-child(7) {
+    width: calc((var(--line) * 10) - (var(--line) * 2));
+    height: var(--line);
+
+    &::after,
+    &::before {
+      top: 0;
+    }
+
+    &::before {
+      left: calc(-1 * var(--line) / 2);
+
+      border-width: calc(var(--line) / 2) calc(var(--line) / 2)
+        calc(var(--line) / 2) 0;
+      border-color: transparent var(--fill-color) transparent transparent;
+    }
+
+    &::after {
+      right: calc(-1 * var(--line) / 2);
+
+      border-width: calc(var(--line) / 2) 0 calc(var(--line) / 2)
+        calc(var(--line) / 2);
+      border-color: transparent transparent transparent var(--fill-color);
+    }
+  }
+
+  //vertical
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(5),
+  &:nth-child(6) {
+    width: var(--line);
+    height: calc((var(--line) * 10) - (var(--line) * 2));
+
+    &::after,
+    &::before {
+      left: 0;
+    }
+
+    &::before {
+      top: calc(-1 * var(--line) / 2);
+
+      border-width: 0 calc(var(--line) / 2) calc(var(--line) / 2)
+        calc(var(--line) / 2);
+      border-color: transparent transparent var(--fill-color) transparent;
+    }
+
+    &::after {
+      bottom: calc(-1 * var(--line) / 2);
+
+      border-width: calc(var(--line) / 2) calc(var(--line) / 2) 0
+        calc(var(--line) / 2);
+      border-color: var(--fill-color) transparent transparent transparent;
+    }
+  }
+
+  &:nth-child(1) {
+    top: 0;
+    left: var(--line);
+
+    transform: translateY(calc(var(--step) * var(--line) * -1));
+  }
+
+  &:nth-child(2) {
+    top: var(--line);
+    right: 0;
+
+    transform: translateX(calc(var(--step) * var(--line)));
+  }
+
+  &:nth-child(3) {
+    bottom: var(--line);
+    right: 0;
+
+    transform: translateX(calc(var(--step) * var(--line)));
+  }
+
+  &:nth-child(4) {
+    bottom: 0;
+    left: var(--line);
+
+    transform: translateY(calc(var(--step) * var(--line)));
+  }
+
+  &:nth-child(5) {
+    bottom: var(--line);
+    left: 0;
+
+    transform: translateX(calc(var(--step) * var(--line) * -1));
+  }
+
+  &:nth-child(6) {
+    top: var(--line);
+    left: 0;
+
+    transform: translateX(calc(var(--step) * var(--line) * -1));
+  }
+
+  &:nth-child(7) {
+    top: calc((var(--line) * 10) - var(--line));
+    left: var(--line);
+  }
+
+  &.action {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

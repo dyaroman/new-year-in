@@ -1,0 +1,7 @@
+.Divider {
+  position: relative;
+
+  display: block;
+  width: calc(var(--line) * 10);
+  height: calc(var(--line) * 10 * 2 - var(--line));
+}
