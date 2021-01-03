@@ -1,6 +1,6 @@
 # [New Year In](https://dyaroman.github.io/new-year-in/)
 
-[![Build and Deploy](https://github.com/dyaroman/new-year-in/workflows/Build%20and%20Deploy/badge.svg)](https://github.com/dyaroman/new-year-in/actions?query=workflow%3A%22Build+and+Deploy%22)
+[![build and deploy](https://github.com/dyaroman/new-year-in/workflows/build%20and%20deploy/badge.svg)](https://github.com/dyaroman/new-year-in/actions?query=workflow%3A%22Build+and+Deploy%22)
 
 ## How to release a new version
 
