@@ -2,7 +2,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: calc(var(--line) * 3);
   width: 100vw;
   height: 100vh;
+
+  > * {
+    margin-left: calc(var(--line) * 2);
+    margin-right: calc(var(--line) * 2);
+  }
 }
