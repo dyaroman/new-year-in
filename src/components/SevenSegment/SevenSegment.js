@@ -34,6 +34,7 @@ function digit2array(digit) {
     case 9:
       arr.push(1, 2, 3, 4, 6, 7);
       break;
+    default:
   }
   return arr;
 }
@@ -49,7 +50,7 @@ function SevenSegment(props) {
         <div
           className={activeSegments.includes(key) ? "action" : null}
           key={key}
-        ></div>
+        />
       ))}
     </div>
   );

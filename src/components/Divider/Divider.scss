@@ -2,6 +2,35 @@
   position: relative;
 
   display: block;
-  width: calc(var(--line) * 10);
+  width: calc(var(--line) * 10 / 2);
   height: calc(var(--line) * 10 * 2 - var(--line));
+
+  &::after,
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: calc(var(--line) * 2);
+
+    display: block;
+    width: var(--line);
+    height: var(--line);
+
+    background-color: var(--fill-color);
+    animation: blink infinite 1s;
+  }
+
+  &::after {
+    top: calc(var(--line) * 4);
+  }
+
+  &::before {
+    bottom: calc(var(--line) * 4);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
