@@ -3,11 +3,11 @@
   --step: 3;
   --fill-color: #000;
   --bg-color: #ccc;
- 
+
   @media (max-width: 992px) {
     --line: 4px;
   }
- 
+
   @media (max-width: 767px) {
     --line: 2px;
   }
@@ -20,6 +20,8 @@ body {
   box-sizing: border-box;
 }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: inherit;
 }
