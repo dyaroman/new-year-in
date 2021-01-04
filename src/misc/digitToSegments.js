@@ -1,4 +1,4 @@
-function digit2array(digit) {
+function digitToSegments(digit) {
   const array = [];
   switch (digit) {
     case 0:
@@ -36,4 +36,4 @@ function digit2array(digit) {
   return array;
 }
 
-export default digit2array;
+export default digitToSegments;

@@ -1,4 +1,4 @@
-function getTime() {
+function getCurrentTime() {
   const now = new Date();
   const timezoneOffset = now.getTimezoneOffset() * 60 * 1000;
   const diffTime =
@@ -26,4 +26,4 @@ function getTime() {
   return str.split("").map((i) => parseInt(i));
 }
 
-export default getTime;
+export default getCurrentTime;
